@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "kalaagh",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "kalaagh",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "kalaagh",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "kalaagh",
+    "public": false
+  },
+  "AppUser": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "Tender": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "Rate": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "Auction": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "Category": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "Message": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "TenderPackage": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "TenderRequest": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "AuctionRequest": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "AuctionPackage": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "BookMarkAuction": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "BookMarkTender": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "TenderFactor": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "AuctionFactor": {
+    "dataSource": "kalaagh",
+    "public": true
+  },
+  "Util": {
+    "dataSource": null,
+    "public": true
+  }
+}

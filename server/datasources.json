@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "kalaagh": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "kalaagh",
+    "password": "",
+    "name": "kalaagh",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

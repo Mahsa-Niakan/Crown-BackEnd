@@ -1,0 +1,158 @@
+{
+  "name": "Auction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "appUserId": {
+      "type": "number",
+      "required": true
+    },
+    "auctionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "auctionDetails": {
+      "type": "string",
+      "required": true
+    },
+    "auctionPic1": {
+      "type": "string"
+    },
+    "auctionPic2": {
+      "type": "string"
+    },
+    "auctionPic3": {
+      "type": "string"
+    },
+    "minPrice": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "auctionViews": {
+      "type": "number",
+      "default": 0
+    },
+    "auctionQuantity": {
+      "type": "number",
+      "default": 0
+    },
+    "auctionState": {
+      "type": "string",
+      "required": true
+    },
+    "auctionCity": {
+      "type": "string",
+      "required": true
+    },
+    "auctionRegisterDate": {
+      "type": "date",
+      "required": true
+    },
+    "auctionExpireDate": {
+      "type": "number",
+      "required": true
+    },
+    "auctionTransfer": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "auctionIsActive": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "auctionIsDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "categoryId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "appUser": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": ""
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": ""
+    },
+    "auctionRequests": {
+      "type": "hasMany",
+      "model": "AuctionRequest",
+      "foreignKey": ""
+    },
+    "bookMarkAuctions": {
+      "type": "hasMany",
+      "model": "BookMarkAuction",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "addNewAuction"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getYourAuctions"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getYourOtherAuctionRequests"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getAuctionsByCategoryId"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getAuctionsByCity"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getAuctionsByState"
+    }
+  ],
+  "methods": {}
+}
